@@ -1,4 +1,4 @@
-package br.edu.infnet.apppaws.apppaws;
+package br.edu.infnet.apppaws;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

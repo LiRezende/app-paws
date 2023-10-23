@@ -8,7 +8,7 @@
 		<version>3.1.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.edu.infnet.app-paws</groupId>
+	<groupId>br.edu.infnet</groupId>
 	<artifactId>app-paws</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>app-paws</name>
