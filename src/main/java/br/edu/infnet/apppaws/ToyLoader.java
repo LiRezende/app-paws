@@ -1,7 +1,7 @@
 package br.edu.infnet.apppaws;
 
-import br.edu.infnet.apppaws.models.domains.Salesman;
-import br.edu.infnet.apppaws.models.services.SalesmanService;
+import br.edu.infnet.apppaws.models.domains.Toy;
+import br.edu.infnet.apppaws.models.services.ToyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -11,17 +11,17 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-@Order(1)
+@Order(3)
 @Component
-public class SalesmanLoder implements ApplicationRunner {
+public class ToyLoader implements ApplicationRunner {
 
     @Autowired
-    private SalesmanService salesmanService;
+    private ToyService toyService;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        FileReader file = new FileReader("files/salesman.txt");
+        FileReader file = new FileReader("files/toy.txt");
         BufferedReader reader = new BufferedReader(file);
 
         String line = reader.readLine();
@@ -32,21 +32,23 @@ public class SalesmanLoder implements ApplicationRunner {
 
             attribute = line.split(";");
 
-            Salesman salesman = new Salesman();
+            Toy toy = new Toy();
 
-            salesman.setCodId(attribute[0]);
-            salesman.setFirstName(attribute[1]);
-            salesman.setLastName(attribute[2]);
-            salesman.setDocumentCpf(attribute[3]);
-            salesman.setEmail(attribute[4]);
+            toy.setCodId(attribute[0]);
+            toy.setName(attribute[1]);
+            toy.setDescription(attribute[2]);
+            toy.setPrice(Float.valueOf(attribute[3]));
+            toy.setInventory(Boolean.valueOf(attribute[4]));
+            toy.setForPuppies(Boolean.valueOf(attribute[5]));
+            toy.setMaterial(attribute[6]);
 
-            salesmanService.include(salesman);
+            toyService.include(toy);
 
             line = reader.readLine();
         }
 
-        for(Salesman salesman: salesmanService.getList()) {
-            System.out.println("[Salesman] " + salesman);
+        for(Toy toy: toyService.getList()) {
+            System.out.println("[Toy] " + toy);
         }
 
         reader.close();

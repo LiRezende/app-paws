@@ -12,7 +12,7 @@ public class SalesmanService {
 
     private Map<String, Salesman> mapSalesman = new HashMap<String, Salesman>();
 
-    public void incluir(Salesman salesman) {
+    public void include(Salesman salesman) {
         mapSalesman.put(salesman.getDocumentCpf(), salesman);
     }
 

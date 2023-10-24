@@ -1,0 +1,4 @@
+xpto123;Ball Ultra;description 1;99;true;false;plastic;T
+xpto345;Dino;description 0;77.33;false;true;cottom;T
+xpto234;Asperina;description 2;88;false;2ml;Benner;F
+xpto456;Dipirona;description 4;66;true;5ml;Benner;F
