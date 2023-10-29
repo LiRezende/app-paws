@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.UUID;
 
 @Order(1)
 @Component
@@ -34,7 +35,7 @@ public class SalesmanLoder implements ApplicationRunner {
 
             Salesman salesman = new Salesman();
 
-            salesman.setCodId(attribute[0]);
+            salesman.setCodId(UUID.fromString(attribute[0]));
             salesman.setFirstName(attribute[1]);
             salesman.setLastName(attribute[2]);
             salesman.setDocumentCpf(attribute[3]);
