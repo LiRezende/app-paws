@@ -15,11 +15,6 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-//    @Autowired
-//    public ProductService(ProductRepository productRepository) {
-//        this.productRepository = productRepository;
-//    }
-
     public void include(Product product) {
         productRepository.save(product);
     }

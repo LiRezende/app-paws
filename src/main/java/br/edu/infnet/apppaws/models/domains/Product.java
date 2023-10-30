@@ -2,6 +2,8 @@ package br.edu.infnet.apppaws.models.domains;
 
 import jakarta.persistence.*;
 
+import java.lang.Integer;
+
 @Entity
 @Table(name = "TB_PRODUCT")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -14,7 +16,7 @@ public class Product {
     private String description;
     private float price;
     private boolean inventory;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "codIdSalesman")
     private Salesman salesman;
 
@@ -75,7 +77,7 @@ public class Product {
     }
 
     public void setSalesman(Salesman salesman) {
-        this.salesman = Product.this.salesman;
+        this.salesman = salesman;
     }
 
     @Override
