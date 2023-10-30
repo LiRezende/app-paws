@@ -1,4 +1,4 @@
-44377c6c-fb65-4bbf-b0fc-f07f50a9b7e2;José Augusto;Lima Moraes;9999990;j.lima@gmail.com
-a45edd93-35bf-4507-9ace-acf6d6de17a2;Maria das Flores;Oliveira;9999991;mafo@gmail.com
-5e2b3904-0e32-4a78-9e5b-5d3ca5023643;Julia;Cardoso;9999992;juca@gmail.com
-6a391efc-3e68-49f8-8dfe-09d369da1735;Pedro;Silva;9999993;pesilva@gmail.com
+José Augusto;Lima Moraes;9999990;j.lima@gmail.com
+Maria das Flores;Oliveira;9999991;mafo@gmail.com
+Julia;Cardoso;9999992;juca@gmail.com
+Pedro;Silva;9999993;pesilva@gmail.com

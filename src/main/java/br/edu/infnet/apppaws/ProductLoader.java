@@ -2,6 +2,7 @@ package br.edu.infnet.apppaws;
 
 import br.edu.infnet.apppaws.models.domains.Farmacy;
 import br.edu.infnet.apppaws.models.domains.Product;
+import br.edu.infnet.apppaws.models.domains.Salesman;
 import br.edu.infnet.apppaws.models.domains.Toy;
 import br.edu.infnet.apppaws.models.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,17 +35,19 @@ public class ProductLoader implements ApplicationRunner {
         while(line != null) {
 
             attribute = line.split(";");
+            var salesman = new Salesman();
 
-            switch (attribute[6]) {
+            switch (attribute[5]) {
                 case "T":
                     Toy toy = new Toy();
-                    toy.setCodId(UUID.fromString(attribute[0]));
-                    toy.setName(attribute[1]);
-                    toy.setDescription(attribute[2]);
-                    toy.setPrice(Float.valueOf(attribute[3]));
-                    toy.setInventory(Boolean.valueOf(attribute[4]));
-                    toy.setForPuppies(Boolean.valueOf(attribute[5]));
-                    toy.setMaterial(attribute[6]);
+                    toy.setName(attribute[0]);
+                    toy.setDescription(attribute[1]);
+                    toy.setPrice(Float.valueOf(attribute[2]));
+                    toy.setInventory(Boolean.valueOf(attribute[3]));
+                    toy.setForPuppies(Boolean.valueOf(attribute[4]));
+                    toy.setMaterial(attribute[5]);
+                    salesman.setCodId(UUID.randomUUID());
+                    toy.setSalesman(salesman);
 
                     productService.include(toy);
 
@@ -52,13 +55,14 @@ public class ProductLoader implements ApplicationRunner {
 
                 case "F":
                     Farmacy farmacy = new Farmacy();
-                    farmacy.setCodId(UUID.fromString(attribute[0]));
-                    farmacy.setName(attribute[1]);
-                    farmacy.setDescription(attribute[2]);
-                    farmacy.setPrice(Float.valueOf(attribute[3]));
-                    farmacy.setInventory(Boolean.valueOf(attribute[4]));
+                    farmacy.setName(attribute[0]);
+                    farmacy.setDescription(attribute[1]);
+                    farmacy.setPrice(Float.valueOf(attribute[2]));
+                    farmacy.setInventory(Boolean.valueOf(attribute[3]));
                     farmacy.setDosage(attribute[4]);
-                    farmacy.setLaboratory(attribute[4]);
+                    farmacy.setLaboratory(attribute[5]);
+                    salesman.setCodId(UUID.randomUUID());
+                    farmacy.setSalesman(salesman);
 
                     productService.include(farmacy);
 

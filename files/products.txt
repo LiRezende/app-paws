@@ -1,4 +1,4 @@
-44377c6c-fb65-4bbf-b0fc-f07f50a9b7e0;Ball Ultra;description 1;99;true;false;plastic;T
-a45edd93-35bf-4507-9ace-acf6d6de17a9;Dino;description 0;77.33;false;true;cottom;T
-5e2b3904-0e32-4a78-9e5b-5d3ca5023641;Asperina;description 2;88;false;2ml;Benner;F
-6a391efc-3e68-49f8-8dfe-09d369da1738;Dipirona;description 4;66;true;5ml;Benner;F
+Ball Ultra;description 1;99;true;false;plastic
+Dino;description 0;77.33;false;true;cottom
+Asperina;description 2;88;false;2ml;Benner
+Dipirona;description 4;66;true;5ml;Benner

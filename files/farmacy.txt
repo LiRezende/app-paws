@@ -1,3 +1,2 @@
-5e2b3904-0e32-4a78-9e5b-5d3ca5023643;Asperina;description 2;88;false;2ml;Benner;F
-
-9a391efc-3e68-49f8-8dfe-09d369da1738;Dipirona;description 4;66;true;5ml;Benner;F
+Asperina;description 2;88;false;2ml;Benner
+Dipirona;description 4;66;true;5ml;Benner

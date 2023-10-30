@@ -22,6 +22,10 @@ public class Salesman {
     public Salesman() {
     }
 
+    public Salesman(UUID codId) {
+        this.codId = codId;
+    }
+
     public Salesman(UUID codId, String firstName, String lastName, String documentCpf, String email) {
         this.codId = codId;
         this.firstName = firstName;

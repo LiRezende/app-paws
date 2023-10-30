@@ -6,6 +6,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "TB_PRODUCT")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Product {
 
     @Id
@@ -22,12 +23,13 @@ public class Product {
     public Product() {
     }
 
-    public Product(UUID codId, String name, String description, float price, boolean inventory) {
+    public Product(UUID codId, String name, String description, float price, boolean inventory, Salesman salesman) {
         this.codId = codId;
         this.name = name;
         this.description = description;
         this.price = price;
         this.inventory = inventory;
+        this.salesman = salesman;
     }
 
     public UUID getCodId() {

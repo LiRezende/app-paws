@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.UUID;
 
 @Order(1)
 @Component
@@ -34,12 +33,10 @@ public class SalesmanLoader implements ApplicationRunner {
             attribute = line.split(";");
 
             Salesman salesman = new Salesman();
-
-            salesman.setCodId(UUID.fromString(attribute[0]));
-            salesman.setFirstName(attribute[1]);
-            salesman.setLastName(attribute[2]);
-            salesman.setDocumentCpf(attribute[3]);
-            salesman.setEmail(attribute[4]);
+            salesman.setFirstName(attribute[0]);
+            salesman.setLastName(attribute[1]);
+            salesman.setDocumentCpf(attribute[2]);
+            salesman.setEmail(attribute[3]);
 
             salesmanService.include(salesman);
 

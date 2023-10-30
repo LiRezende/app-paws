@@ -1,7 +1,6 @@
 package br.edu.infnet.apppaws.models.domains;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 
 @Entity
 public class Farmacy extends Product {
