@@ -2,28 +2,26 @@ package br.edu.infnet.apppaws.models.domains;
 
 import jakarta.persistence.*;
 
-import java.util.UUID;
-
 @Entity
 @Table(name = "TB_PRODUCT")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID codId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer codId;
     private String name;
     private String description;
     private float price;
     private boolean inventory;
     @ManyToOne
-    @JoinColumn(name = "cod_id_salesman")
+    @JoinColumn(name = "codIdSalesman")
     private Salesman salesman;
 
     public Product() {
     }
 
-    public Product(UUID codId, String name, String description, float price, boolean inventory, Salesman salesman) {
+    public Product(Integer codId, String name, String description, float price, boolean inventory, Salesman salesman) {
         this.codId = codId;
         this.name = name;
         this.description = description;
@@ -32,7 +30,7 @@ public class Product {
         this.salesman = salesman;
     }
 
-    public UUID getCodId() {
+    public Integer getCodId() {
         return codId;
     }
 
@@ -52,7 +50,7 @@ public class Product {
         return inventory;
     }
 
-    public void setCodId(UUID codId) {
+    public void setCodId(Integer codId) {
         this.codId = codId;
     }
 

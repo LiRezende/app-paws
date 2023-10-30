@@ -1,4 +1,4 @@
-Ball Ultra;description 1;99;true;false;plastic
-Dino;description 0;77.33;false;true;cottom
-Asperina;description 2;88;false;2ml;Benner
-Dipirona;description 4;66;true;5ml;Benner
+Ball Ultra;description 1;99;true;false;plastic;T;juca@gmail.com
+Dino;description 0;77.33;false;true;cottom;T;pesilva@gmail.com
+Asperina;description 2;88;false;2ml;Benner;F;mafo@gmail.com
+Dipirona;description 4;66;true;5ml;Benner;F;j.lima@gmail.com

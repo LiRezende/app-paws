@@ -1,2 +1,2 @@
-Ball Ultra;description 1;99;true;false;plastic
-Dino;description 0;77.33;false;true;cottom
+Ball Ultra;description 1;99;true;false;plastic;juca@gmail.com
+Dino;description 0;77.33;false;true;cottom;pesilva@gmail.com

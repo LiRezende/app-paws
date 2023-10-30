@@ -1,2 +1,2 @@
-Asperina;description 2;88;false;2ml;Benner
-Dipirona;description 4;66;true;5ml;Benner
+Asperina;description 2;88;false;2ml;Benner;mafo@gmail.com
+Dipirona;description 4;66;true;5ml;Benner;j.lima@gmail.com

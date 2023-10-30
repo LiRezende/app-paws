@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SalesmanService {
@@ -15,6 +17,10 @@ public class SalesmanService {
 
     public void include(Salesman salesman) {
         salesmanRepository.save(salesman);
+    }
+
+    public Salesman findSalesmanByEmail(String email) {
+        return salesmanRepository.findFirstByEmail(email).orElse(null);
     }
 
     public Collection<Salesman> getAllList(){

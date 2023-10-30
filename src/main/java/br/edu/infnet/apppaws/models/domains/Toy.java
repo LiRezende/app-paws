@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "TB_TOY")
 public class Toy extends Product {
 
     private boolean forPuppies;

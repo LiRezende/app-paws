@@ -1,8 +1,10 @@
 package br.edu.infnet.apppaws.models.domains;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "TB_FARMACY")
 public class Farmacy extends Product {
 
     private String dosage;

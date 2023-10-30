@@ -1,9 +1,8 @@
 package br.edu.infnet.apppaws;
 
 import br.edu.infnet.apppaws.models.domains.Farmacy;
-import br.edu.infnet.apppaws.models.domains.Salesman;
 import br.edu.infnet.apppaws.models.services.FarmacyService;
-import org.springframework.beans.factory.annotation.Autowired;
+import br.edu.infnet.apppaws.models.services.SalesmanService;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
@@ -11,14 +10,19 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.UUID;
 
 @Order(4)
 @Component
 public class FarmacyLoader implements ApplicationRunner {
 
-    @Autowired
     private FarmacyService farmacyService;
+
+    private SalesmanService salesmanService;
+
+    public FarmacyLoader(FarmacyService farmacyService, SalesmanService salesmanService) {
+        this.farmacyService = farmacyService;
+        this.salesmanService = salesmanService;
+    }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -42,8 +46,7 @@ public class FarmacyLoader implements ApplicationRunner {
             farmacy.setDosage(attribute[4]);
             farmacy.setLaboratory(attribute[5]);
 
-            var salesman = new Salesman();
-            salesman.setCodId(UUID.randomUUID());
+            var salesman = salesmanService.findSalesmanByEmail(attribute[6]);
             farmacy.setSalesman(salesman);
 
             farmacyService.include(farmacy);

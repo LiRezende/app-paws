@@ -3,30 +3,30 @@ package br.edu.infnet.apppaws.models.domains;
 import jakarta.persistence.*;
 
 import java.util.List;
-import java.util.UUID;
+import java.lang.Integer;
 
 @Entity
 @Table(name = "TB_SALESMAN")
 public class Salesman {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID codId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer codId;
     private String firstName;
     private String lastName;
     private String documentCpf;
     private String email;
-    @OneToMany
+    @OneToMany(mappedBy = "salesman")
     private List<Product> products;
 
     public Salesman() {
     }
 
-    public Salesman(UUID codId) {
+    public Salesman(Integer codId) {
         this.codId = codId;
     }
 
-    public Salesman(UUID codId, String firstName, String lastName, String documentCpf, String email) {
+    public Salesman(Integer codId, String firstName, String lastName, String documentCpf, String email) {
         this.codId = codId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -34,7 +34,7 @@ public class Salesman {
         this.email = email;
     }
 
-    public UUID getCodId() {
+    public Integer getCodId() {
         return codId;
     }
 
@@ -54,7 +54,7 @@ public class Salesman {
         return email;
     }
 
-    public void setCodId(UUID codId) {
+    public void setCodId(Integer codId) {
         this.codId = codId;
     }
 
