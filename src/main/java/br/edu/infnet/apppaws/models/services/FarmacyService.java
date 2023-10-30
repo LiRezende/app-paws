@@ -1,22 +1,23 @@
 package br.edu.infnet.apppaws.models.services;
 
 import br.edu.infnet.apppaws.models.domains.Farmacy;
+import br.edu.infnet.apppaws.models.repositories.FarmacyRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 public class FarmacyService {
 
-    private Map<String, Farmacy> mapFarmacy = new HashMap<String, Farmacy>();
+    @Autowired
+    private FarmacyRepository farmacyRepository;
 
     public void include(Farmacy toy) {
-        mapFarmacy.put(toy.getCodId(), toy);
+        farmacyRepository.save(toy);
     }
 
-    public Collection<Farmacy> getList(){
-        return mapFarmacy.values();
+    public Collection<Farmacy> getAllList(){
+        return (Collection<Farmacy>) farmacyRepository.findAll();
     }
 }

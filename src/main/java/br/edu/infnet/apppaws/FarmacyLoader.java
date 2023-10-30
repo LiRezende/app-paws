@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.UUID;
 
 @Order(4)
 @Component
@@ -34,7 +35,7 @@ public class FarmacyLoader implements ApplicationRunner {
 
             Farmacy farmacy = new Farmacy();
 
-            farmacy.setCodId(attribute[0]);
+            farmacy.setCodId(UUID.fromString(attribute[0]));
             farmacy.setName(attribute[1]);
             farmacy.setDescription(attribute[2]);
             farmacy.setPrice(Float.valueOf(attribute[3]));
@@ -47,7 +48,7 @@ public class FarmacyLoader implements ApplicationRunner {
             line = reader.readLine();
         }
 
-        for(Farmacy farmacy: farmacyService.getList()) {
+        for(Farmacy farmacy: farmacyService.getAllList()) {
             System.out.println("[Farmacy] " + farmacy);
         }
 

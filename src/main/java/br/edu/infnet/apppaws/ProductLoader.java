@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.UUID;
 
 @Order(2)
 @Component
@@ -37,7 +38,7 @@ public class ProductLoader implements ApplicationRunner {
             switch (attribute[6]) {
                 case "T":
                     Toy toy = new Toy();
-                    toy.setCodId(attribute[0]);
+                    toy.setCodId(UUID.fromString(attribute[0]));
                     toy.setName(attribute[1]);
                     toy.setDescription(attribute[2]);
                     toy.setPrice(Float.valueOf(attribute[3]));
@@ -51,7 +52,7 @@ public class ProductLoader implements ApplicationRunner {
 
                 case "F":
                     Farmacy farmacy = new Farmacy();
-                    farmacy.setCodId(attribute[0]);
+                    farmacy.setCodId(UUID.fromString(attribute[0]));
                     farmacy.setName(attribute[1]);
                     farmacy.setDescription(attribute[2]);
                     farmacy.setPrice(Float.valueOf(attribute[3]));
@@ -70,7 +71,7 @@ public class ProductLoader implements ApplicationRunner {
             line = reader.readLine();
         }
 
-        for(Product product: productService.getList()) {
+        for(Product product: productService.getAllList()) {
             System.out.println("[Product] " + product);
         }
 

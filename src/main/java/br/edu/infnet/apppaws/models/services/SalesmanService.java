@@ -1,22 +1,23 @@
 package br.edu.infnet.apppaws.models.services;
 
 import br.edu.infnet.apppaws.models.domains.Salesman;
+import br.edu.infnet.apppaws.models.repositories.SalesmanRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 public class SalesmanService {
 
-    private Map<String, Salesman> mapSalesman = new HashMap<String, Salesman>();
+    @Autowired
+    private SalesmanRepository salesmanRepository;
 
     public void include(Salesman salesman) {
-        mapSalesman.put(salesman.getDocumentCpf(), salesman);
+        salesmanRepository.save(salesman);
     }
 
-    public Collection<Salesman> getList(){
-        return mapSalesman.values();
+    public Collection<Salesman> getAllList(){
+        return (Collection<Salesman>) salesmanRepository.findAll();
     }
 }

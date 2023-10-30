@@ -1,5 +1,9 @@
 package br.edu.infnet.apppaws.models.domains;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
 public class Toy extends Product {
 
     private boolean forPuppies;

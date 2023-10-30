@@ -1,17 +1,28 @@
 package br.edu.infnet.apppaws.models.domains;
 
+import jakarta.persistence.*;
+
+import java.util.List;
+import java.util.UUID;
+
+@Entity
+@Table(name = "TB_SALESMAN")
 public class Salesman {
 
-    private String codId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID codId;
     private String firstName;
     private String lastName;
     private String documentCpf;
     private String email;
+    @OneToMany
+    private List<Product> products;
 
     public Salesman() {
     }
 
-    public Salesman(String codId, String firstName, String lastName, String documentCpf, String email) {
+    public Salesman(UUID codId, String firstName, String lastName, String documentCpf, String email) {
         this.codId = codId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -19,7 +30,7 @@ public class Salesman {
         this.email = email;
     }
 
-    public String getCodId() {
+    public UUID getCodId() {
         return codId;
     }
 
@@ -39,7 +50,7 @@ public class Salesman {
         return email;
     }
 
-    public void setCodId(String codId) {
+    public void setCodId(UUID codId) {
         this.codId = codId;
     }
 
@@ -57,6 +68,10 @@ public class Salesman {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setProdutos(List<Product> productsList) {
+        this.products = productsList;
     }
 
     @Override

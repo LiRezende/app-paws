@@ -1,22 +1,23 @@
 package br.edu.infnet.apppaws.models.services;
 
 import br.edu.infnet.apppaws.models.domains.Toy;
+import br.edu.infnet.apppaws.models.repositories.ToyRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 public class ToyService {
 
-    private Map<String, Toy> mapToy = new HashMap<String, Toy>();
+    @Autowired
+    private ToyRepository toyRepository;
 
     public void include(Toy toy) {
-        mapToy.put(toy.getCodId(), toy);
+        toyRepository.save(toy);
     }
 
-    public Collection<Toy> getList(){
-        return mapToy.values();
+    public Collection<Toy> getAllList(){
+        return (Collection<Toy>) toyRepository.findAll();
     }
 }

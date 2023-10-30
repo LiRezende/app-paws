@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.UUID;
 
 @Order(3)
 @Component
@@ -34,7 +35,7 @@ public class ToyLoader implements ApplicationRunner {
 
             Toy toy = new Toy();
 
-            toy.setCodId(attribute[0]);
+            toy.setCodId(UUID.fromString(attribute[0]));
             toy.setName(attribute[1]);
             toy.setDescription(attribute[2]);
             toy.setPrice(Float.valueOf(attribute[3]));
@@ -47,7 +48,7 @@ public class ToyLoader implements ApplicationRunner {
             line = reader.readLine();
         }
 
-        for(Toy toy: toyService.getList()) {
+        for(Toy toy: toyService.getAllList()) {
             System.out.println("[Toy] " + toy);
         }
 

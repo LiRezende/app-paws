@@ -1,2 +1,2 @@
-xpto123;Ball Ultra;description 1;99;true;false;plastic
-xpto345;Dino;description 0;77.33;false;true;cottom
+54377c6c-fb65-4bbf-b0fc-f07f50a9b7e0;Ball Ultra;description 1;99;true;false;plastic
+44377c6c-fb60-4bbf-b0fc-f07f50a9b7e0;Dino;description 0;77.33;false;true;cottom

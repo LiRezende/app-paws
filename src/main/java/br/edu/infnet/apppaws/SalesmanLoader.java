@@ -14,7 +14,7 @@ import java.util.UUID;
 
 @Order(1)
 @Component
-public class SalesmanLoder implements ApplicationRunner {
+public class SalesmanLoader implements ApplicationRunner {
 
     @Autowired
     private SalesmanService salesmanService;
@@ -46,7 +46,7 @@ public class SalesmanLoder implements ApplicationRunner {
             line = reader.readLine();
         }
 
-        for(Salesman salesman: salesmanService.getList()) {
+        for(Salesman salesman: salesmanService.getAllList()) {
             System.out.println("[Salesman] " + salesman);
         }
 
