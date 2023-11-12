@@ -51,7 +51,7 @@
 					<c:forEach var="item" items="${list}">
 						<tr>
 						  <td>${item}</td>
-						  <td><a href="/${rota}/${item.id}/excluir">excluir</a></td>
+						  <td><a href="/${route}/${item.id}/excluir">excluir</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
