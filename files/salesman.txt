@@ -1,4 +1,4 @@
-José Augusto;Lima Moraes;984.749.350-24;j.lima@gmail.com
-Maria das Flores;Oliveira;758.587.920-22;mafo@gmail.com
-Julia;Cardoso;781.210.720-50;juca@gmail.com
-Pedro;Silva;274.154.210-43;pesilva@gmail.com
+José Augusto;Lima Moraes;984.749.350-24;j.lima@gmail.com;20010020
+Maria das Flores;Oliveira;758.587.920-22;mafo@gmail.com;20010020
+Julia;Cardoso;781.210.720-50;juca@gmail.com;22241900
+Pedro;Silva;274.154.210-43;pesilva@gmail.com;22241900

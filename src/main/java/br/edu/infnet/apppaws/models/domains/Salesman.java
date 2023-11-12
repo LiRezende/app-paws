@@ -29,6 +29,9 @@ public class Salesman {
     private String email;
     @OneToMany(mappedBy = "salesman")
     private List<Product> products;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "codIdAddress")
+    private Address address;
 
     public Salesman() {
     }
@@ -65,6 +68,14 @@ public class Salesman {
         return email;
     }
 
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
     public void setCodId(Integer codId) {
         this.codId = codId;
     }
@@ -89,8 +100,17 @@ public class Salesman {
         this.products = productsList;
     }
 
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
-        return String.format("%s - %s - %s - %s - %s", codId, firstName, lastName, documentCpf, email);
+        return String.format("codId (%d) - nome (%s) - sobrenome (%s) - cpf (%s) - email (%s) - endereço (%s) - produtos (%d)",
+                codId, firstName, lastName, documentCpf, email, address, products != null ? products.size() : 0);
     }
 }
