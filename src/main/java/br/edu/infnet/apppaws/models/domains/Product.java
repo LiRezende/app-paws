@@ -1,6 +1,9 @@
 package br.edu.infnet.apppaws.models.domains;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Size;
 
 import java.lang.Integer;
 
@@ -12,9 +15,13 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codId;
+    @Size(min = 3, max = 30)
     private String name;
+    @Size(min = 3, max = 60)
     private String description;
+    @Positive
     private float price;
+    @PositiveOrZero
     private boolean inventory;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "codIdSalesman")

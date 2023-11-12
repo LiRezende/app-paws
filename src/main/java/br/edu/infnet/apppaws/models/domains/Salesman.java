@@ -1,20 +1,31 @@
 package br.edu.infnet.apppaws.models.domains;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 import java.util.List;
 import java.lang.Integer;
 
 @Entity
-@Table(name = "TB_SALESMAN")
+@Table(name = "TB_SALESMAN", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"documentCpf"}),
+        @UniqueConstraint(columnNames = {"email"})
+})
 public class Salesman {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codId;
+    @Size(min = 3, max = 20)
     private String firstName;
+    @Size(min = 3, max = 40)
     private String lastName;
+    @Pattern(regexp = "\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}")
+    @Column(unique = true)
     private String documentCpf;
+    @Size(min = 2, max = 50)
+    @Column(unique = true)
     private String email;
     @OneToMany(mappedBy = "salesman")
     private List<Product> products;

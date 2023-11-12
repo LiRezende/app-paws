@@ -2,12 +2,14 @@ package br.edu.infnet.apppaws.models.domains;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "TB_TOY")
 public class Toy extends Product {
 
     private boolean forPuppies;
+    @Size(min = 3, max = 60, message = "O material deve ter entre {min} e {max} caracteres.")
     private String material;
 
     public boolean isForPuppies() {
