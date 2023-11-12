@@ -2,7 +2,6 @@ package br.edu.infnet.apppaws.models.domains;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
 
 import java.lang.Integer;
@@ -21,7 +20,6 @@ public class Product {
     private String description;
     @Positive
     private float price;
-    @PositiveOrZero
     private boolean inventory;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "codIdSalesman")
