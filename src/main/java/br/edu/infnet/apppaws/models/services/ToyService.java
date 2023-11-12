@@ -20,4 +20,8 @@ public class ToyService {
     public Collection<Toy> getAllList(){
         return (Collection<Toy>) toyRepository.findAll();
     }
+
+    public long getQuantity() {
+        return toyRepository.count();
+    }
 }

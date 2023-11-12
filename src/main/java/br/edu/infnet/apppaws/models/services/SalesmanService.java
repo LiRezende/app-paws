@@ -24,4 +24,12 @@ public class SalesmanService {
     public Collection<Salesman> getAllList(){
         return (Collection<Salesman>) salesmanRepository.findAll();
     }
+
+    public void exclude(Integer id) {
+        salesmanRepository.deleteById(id);
+    }
+
+    public long getQuantity() {
+        return salesmanRepository.count();
+    }
 }

@@ -26,4 +26,8 @@ public class ProductService {
     public List<Product> getAllList(Salesman salesman) {
         return productRepository.findBySalesman(salesman);
     }
+
+    public long getQuantity() {
+        return productRepository.count();
+    }
 }

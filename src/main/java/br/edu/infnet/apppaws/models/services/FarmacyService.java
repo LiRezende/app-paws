@@ -20,4 +20,8 @@ public class FarmacyService {
     public Collection<Farmacy> getAllList(){
         return (Collection<Farmacy>) farmacyRepository.findAll();
     }
+
+    public long getQuantity() {
+        return farmacyRepository.count();
+    }
 }
