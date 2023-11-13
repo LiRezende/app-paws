@@ -1,8 +1,8 @@
 package br.edu.infnet.apppaws.models.domains;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.Size;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "TB_TOY")

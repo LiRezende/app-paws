@@ -1,6 +1,6 @@
 package br.edu.infnet.apppaws.models.domains;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "TB_ADDRESS")

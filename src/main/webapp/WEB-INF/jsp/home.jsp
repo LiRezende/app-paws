@@ -15,16 +15,16 @@
 	        <a class="nav-link active" href="/">App Paws</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="/vendedor/lista">Vendedores</a>
+	        <a class="nav-link" href="/vendedor/list">Vendedores</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="/produto/lista">Produtos</a>
+	        <a class="nav-link" href="/produto/list">Produtos</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="/brinquedo/lista">Brinquedos</a>
+	        <a class="nav-link" href="/brinquedo/list">Brinquedos</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="/farmaceutico/lista">Farmacêuticos</a>
+	        <a class="nav-link" href="/farmaceutico/list">Farmacêuticos</a>
 	      </li>
 	    </ul>
 	  </div>
@@ -51,7 +51,7 @@
 					<c:forEach var="item" items="${list}">
 						<tr>
 						  <td>${item}</td>
-						  <td><a href="/${route}/${item.id}/excluir">excluir</a></td>
+						  <td><a href="/${route}/${item.codId}/excluir">excluir</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

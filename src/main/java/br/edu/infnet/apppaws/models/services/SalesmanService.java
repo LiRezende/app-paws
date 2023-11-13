@@ -1,5 +1,7 @@
 package br.edu.infnet.apppaws.models.services;
 
+import br.edu.infnet.apppaws.clients.AddressClientInterface;
+import br.edu.infnet.apppaws.models.domains.Address;
 import br.edu.infnet.apppaws.models.domains.Salesman;
 import br.edu.infnet.apppaws.models.repositories.SalesmanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,12 @@ public class SalesmanService {
     @Autowired
     private SalesmanRepository salesmanRepository;
 
+    @Autowired
+    private AddressClientInterface addressClient;
+
     public void include(Salesman salesman) {
+        Address address = addressClient.buscarCep(salesman.getAddress().getCep());
+        salesman.setAddress(address);
         salesmanRepository.save(salesman);
     }
 

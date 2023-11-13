@@ -32,7 +32,7 @@ public class AppController {
         return "home";
     }
 
-    @GetMapping(value = "/produto/lista")
+    @GetMapping(value = "/produto/list")
     public String obterListaProduto(Model model) {
 
         model.addAttribute("title", "Produtos:");
@@ -41,7 +41,7 @@ public class AppController {
         return showHome(model);
     }
 
-    @GetMapping(value = "/brinquedo/lista")
+    @GetMapping(value = "/brinquedo/list")
     public String obterListaAlimenticio(Model model) {
 
         model.addAttribute("title", "Produtos Alimentícios:");
@@ -50,7 +50,7 @@ public class AppController {
         return showHome(model);
     }
 
-    @GetMapping(value = "/farmaceutico/lista")
+    @GetMapping(value = "/farmaceutico/list")
     public String obterListaEletronico(Model model) {
 
         model.addAttribute("title", "Produtos Eletrônicos:");

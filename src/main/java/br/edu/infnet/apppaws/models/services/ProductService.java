@@ -15,6 +15,9 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+    public void include(Product product) {
+        productRepository.save(product);
+    }
 
     public Collection<Product> getAllList() {
         return (Collection<Product>) productRepository.findAll();

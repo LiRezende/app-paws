@@ -1,7 +1,10 @@
 package br.edu.infnet.apppaws;
 
+import br.edu.infnet.apppaws.models.domains.Address;
 import br.edu.infnet.apppaws.models.domains.Salesman;
 import br.edu.infnet.apppaws.models.services.SalesmanService;
+
+import javax.validation.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -37,8 +40,13 @@ public class SalesmanLoader implements ApplicationRunner {
             salesman.setLastName(attribute[1]);
             salesman.setDocumentCpf(attribute[2]);
             salesman.setEmail(attribute[3]);
+            salesman.setAddress(new Address(attribute[4]));
 
-            salesmanService.include(salesman);
+            try {
+                salesmanService.include(salesman);
+            } catch (ConstraintViolationException e) {
+                FileLogger.logException("[Salesman] " + salesman + " - " + e.getMessage());
+            }
 
             line = reader.readLine();
         }

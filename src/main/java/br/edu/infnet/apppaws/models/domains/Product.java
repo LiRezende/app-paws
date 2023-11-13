@@ -1,8 +1,8 @@
 package br.edu.infnet.apppaws.models.domains;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
+import javax.persistence.*;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 
 import java.lang.Integer;
 
@@ -21,7 +21,7 @@ public class Product {
     @Positive
     private float price;
     private boolean inventory;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "codIdSalesman")
     private Salesman salesman;
 

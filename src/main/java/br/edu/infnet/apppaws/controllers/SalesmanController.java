@@ -17,15 +17,15 @@ public class SalesmanController {
     private SalesmanService salesmanService;
 
 
-    @GetMapping(value = "/vendedor/{id}/excluir")
-    public String excluir(@PathVariable Integer id) {
+    @GetMapping(value = "/vendedor/{codId}/excluir")
+    public String excluir(@PathVariable Integer codId) {
 
-        salesmanService.exclude(id);
+        salesmanService.exclude(codId);
 
-        return "redirect:/vendedor/lista";
+        return "redirect:/vendedor/list";
     }
 
-    @GetMapping(value = "/vendedor/lista")
+    @GetMapping(value = "/vendedor/list")
     public String obterLista(Model model) {
 
         model.addAttribute("route", "vendedor");

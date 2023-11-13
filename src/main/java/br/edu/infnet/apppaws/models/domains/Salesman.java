@@ -1,8 +1,8 @@
 package br.edu.infnet.apppaws.models.domains;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import javax.persistence.*;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import java.util.List;
 import java.lang.Integer;
@@ -27,7 +27,8 @@ public class Salesman {
     @Size(min = 2, max = 50)
     @Column(unique = true)
     private String email;
-    @OneToMany(mappedBy = "salesman")
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "codIdSalesman")
     private List<Product> products;
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "codIdAddress")
