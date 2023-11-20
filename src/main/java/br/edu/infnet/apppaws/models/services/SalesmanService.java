@@ -28,6 +28,11 @@ public class SalesmanService {
         return salesmanRepository.findFirstByEmail(email).orElse(null);
     }
 
+    public Salesman search(String documentCpf) {
+        return salesmanRepository.findByDocumentCpf(documentCpf);
+    }
+
+
     public Collection<Salesman> getAllList(){
         return (Collection<Salesman>) salesmanRepository.findAll();
     }

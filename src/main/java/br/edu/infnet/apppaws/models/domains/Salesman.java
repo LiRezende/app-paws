@@ -27,7 +27,7 @@ public class Salesman {
     @Size(min = 2, max = 50)
     @Column(unique = true)
     private String email;
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JoinColumn(name = "codIdSalesman")
     private List<Product> products;
     @OneToOne(cascade = CascadeType.PERSIST)

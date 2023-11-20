@@ -10,4 +10,6 @@ import java.util.Optional;
 public interface SalesmanRepository extends JpaRepository<Salesman, Integer> {
 
     Optional<Salesman> findFirstByEmail(String email);
+
+    Salesman findByDocumentCpf(String documentCpf);
 }

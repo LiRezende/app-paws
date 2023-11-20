@@ -1,9 +1,6 @@
 package br.edu.infnet.apppaws.controllers;
 
-import br.edu.infnet.apppaws.models.services.FarmacyService;
-import br.edu.infnet.apppaws.models.services.ProductService;
-import br.edu.infnet.apppaws.models.services.SalesmanService;
-import br.edu.infnet.apppaws.models.services.ToyService;
+import br.edu.infnet.apppaws.models.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +18,13 @@ public class AppController {
     @Autowired
     private FarmacyService farmacyService;
 
+    @Autowired
+    private InformationService informationService;
+
     @GetMapping(value = "/")
     public String showHome(Model model) {
+
+        model.addAttribute("information", informationService.getList());
 
         model.addAttribute("qtdSalesman", salesmanService.getQuantity());
         model.addAttribute("qtdProduct", productService.getQuantity());
@@ -33,7 +35,7 @@ public class AppController {
     }
 
     @GetMapping(value = "/produto/list")
-    public String obterListaProduto(Model model) {
+    public String getProductList(Model model) {
 
         model.addAttribute("title", "Produtos:");
         model.addAttribute("list", productService.getAllList());
@@ -42,7 +44,7 @@ public class AppController {
     }
 
     @GetMapping(value = "/brinquedo/list")
-    public String obterListaAlimenticio(Model model) {
+    public String getToyList(Model model) {
 
         model.addAttribute("title", "Produtos Alimentícios:");
         model.addAttribute("list", toyService.getAllList());
@@ -51,7 +53,7 @@ public class AppController {
     }
 
     @GetMapping(value = "/farmaceutico/list")
-    public String obterListaEletronico(Model model) {
+    public String getFarmacyList(Model model) {
 
         model.addAttribute("title", "Produtos Eletrônicos:");
         model.addAttribute("list", farmacyService.getAllList());
